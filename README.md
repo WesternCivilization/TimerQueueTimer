@@ -1,13 +1,14 @@
 # TimerQueueTimer
-Type for executing user-defined functions with a user-defined arguments at a user-defined time
 
-TimerQueueTimer is one of the synchronization functions supported in Win32 API. see this [MSDN](https://msdn.microsoft.com/en-us/library/windows/desktop/ms682485(v=vs.85).aspx) page.
-
-Role of TimerQueueTimer in nutshell is: Execute a user-defined function with a user-defined argument at a user-defined time.
+TimerQueueTimer is one of the synchronization functions supported in Win32 API (C++). see this [MSDN](https://msdn.microsoft.com/en-us/library/windows/desktop/ms682485(v=vs.85).aspx) page.
 
 TimerQueue in C++ allows user to register a routine with a special queue called timer queue. The routine will be executed by a thread after delay specified by user while registering the routine. We refer this routine as timer routine.
 
-This is project is an atrempt to implement similar functionality in C#.
+Role of TimerQueueTimer in nutshell is: Execute a user-defined function with a user-defined argument at a user-defined time.
+
+This is project is an attempt to implement similar functionality in C#.
+
+# Solution 
 
 In nutshell we use priority queue to solve this problem. Each element of the queue contains callback address (the timer routine), reference to callback parameter and time in future when it should be fired. The 'time' is the priority.
 
